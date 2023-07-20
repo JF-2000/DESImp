@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style/main.css"  media="all">
+
+    <title>Recibo</title>
+</head>
+<body class="recibo" onload="constructrecibo()">
+<div >
+    <div id="recibo" class="recibo">
+        <h1 style="text-align: center;">Recibo de pago</h1>
+
+        <div class="row my-3">
+        <div class="col-9">
+            <h2>INMOBILIARIA ABREU GARCIA S.R.L.</h2>
+            <h4>RNC: 132048156</h4>
+        </div>
+        <div class="col-3">
+            <h5>Recibo No. #<label id="idpago"></label></h5>
+            <h5>Fecha: <label id="fecha"></label></h5>
+            <h5>Hora: <label id="hora"></label></h5>
+        </div>
+        </div>
+
+        <hr />
+    
+        <div id="contenidofactura"></div>
+
+        <hr /><br>
+
+        <div class="row">
+            <div class="inline-block col-6">
+                <label class="enunciado2">Recibído por: </label><label>_________________________________</label>
+            </div>
+            <div class="inline-block col-6">
+            </div>
+        </div>
+    </div>
+</div><br>
+<div class="recibo">
+    <div style="text-align: right;">
+        <button class="btn btn-primary" id="imprimir" >Imprimir</button>
+    </div>
+    
+</div>
+</body>
+<script src="../../js/config.js"></script>
+<script src="../../js/finanzas/recibo.js"></script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/fontasome.css">
+  <title>Menu</title>
+
+</head>
+
+<body>
+  
+    <div class="card-4">
+      <div class="card-heading">
+        <h1 class="title">Menú principal.</h1>
+      </div>
+      <div class="row">
+        <div class="card col-sm-12 col-md-4 col-lg-3" style="width: 18rem;">
+          <img class="card-img-top" src="./img/clientes.png" alt="Card image cap">
+          <h2 class="card-title">Clientes</h2>
+          <button class="btn btn-dark" id="btnclientes">Opciones</button>
+        </div>
+
+        <div class="card col-sm-12 col-md-4 col-lg-3" style="width: 18rem;">
+          <img class="card-img-top" src="./img/bienes.png" alt="Card image cap">
+          <h2 class="card-title">Bienes</h2>
+          <button class="btn btn-dark" id="btnbienes">Opciones</button>
+        </div>
+
+        <div class="card col-sm-12 col-md-4 col-lg-3" style="width: 18rem;">
+          <img class="card-img-top" src="./img/finanzas.png" alt="Card image cap">
+          <h2 class="card-title">Facturas</h2>
+          <button class="btn btn-dark" id="btnfacturas">Opciones</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="modalclientes" class="modal">
+        <div class="modal-content">
+          <div class="card-modal">
+            <div class="card-heading">
+              <h2 class="title">Opciones de clientes</h2>
+            </div>
+            <span class="close"></span>
+            <div class="row">
+              <a class="btn btn-dark" href="./vistas/funciones/crearcliente.html"><i class="fas fa-user"></i> Registrar cliente</a><br>
+              <a class="btn btn-dark" href="./vistas/consultas/clientes.html"><i class="fas fa-users"></i> Lista de clientes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalbienes" class="modal">
+        <div class="modal-content">
+          <div class="card-modal">
+            <div class="card-heading">
+              <h2 class="title">Opciones de bienes</h2>
+            </div>
+            <div class="row">
+              <a class="btn btn-dark" href="./vistas/funciones/registrarbien.html"><i class="fas fa-coins"></i> Registrar bienes</a>
+              <a class="btn btn-dark" href="./vistas/funciones/creartipo.html"><i class="fas fa-cubes"></i> Registrar tipo de bienes</a>
+              <a class="btn btn-dark" href="./vistas/consultas/listabienes.html"><i class="fas fa-list-ol"></i> Lista de bienes</a>
+              <a class="btn btn-dark" href="./vistas/consultas/listatipobien.html"><i class="fas fa-list-ol"></i> Lista tipo de bienes</a>
+              <a class="btn btn-dark" href="./vistas/consultas/listagrupos.html"><i class="fas fa-list-ol"></i> Lista grupos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalfacturas" class="modal">
+        <div class="modal-content">
+          <div class="card-modal">
+            <div class="card-heading">
+              <h2 class="title">Opciones de finanzas</h2>
+            </div>
+            <div class="row">
+              <a class="btn btn-dark" href="./vistas/consultas/deudores.html"><i class="fas fa-hand-holding-usd"></i> Facturas por cobrar</a>
+              <a class="btn btn-dark" href="./vistas/consultas/vistacontratos.html"><i class="fas fa-file-signature"></i> Contratos</a>
+              <a class="btn btn-dark" href="./vistas/consultas/benegrupos.html"><i class="fas fa-file-signature"></i> Reportes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+<script src="js/config.js"></script>
+<script src="js/herramientas/session.js"></script>
+<script src="js/modals/modals.js"></script>
+</html>

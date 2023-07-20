@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style/main2.css"  media="all">
+    <link rel="stylesheet" href="../../style/fontasome.css">
+    <script src="../../js/herramientas/buscar.js"></script>
+    
+
+    <title>Contrato</title>
+</head>
+
+<body onload="listartipobienes(); listagrupos();">
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Contrato</h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="name">Cliente:</div>
+                            <div class="value">   
+                                <div class="row row-refine info" id="infocliente"></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Tiempo:</div>
+                            <div class="value">   
+                                <div class="row row-refine info">
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input type="date" id="fechaini">
+                                            <label class="label--desc">Fecha inicio</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input type="date" id="fechafin">
+                                            <label class="label--desc">Fecha fin</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="row row-refine" style="text-align: center; margin-left: auto; margin-right: auto;">
+                                <div class="col-lg-4 col-md-4 col-sm-4  p-2"><a id="quincena" class="btn btn-dark btn2">Quincena</a></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2  p-2"><a id="mes" class="btn btn-dark btn2">Mes</a></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2  p-2"><a id="year" class="btn btn-dark btn2">Año</a></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4  p-2"><a id="indef" class="btn btn-dark btn2">Indefinido</a></div>  
+                            </div>  
+                        </div>
+                        <div class="form-row">
+                            <label class="info">Información del bien seleccionado:</label><br><div style="background-color: white; margin-left: auto; margin-right: auto; width: 80%; border: 2px solid black;" class="row info" id="infobien"></div><br><br>
+                        </div>
+                        <div class="row" style="text-align: center;">
+                            <button class="btn btn-dark btn3" id="btnbienes">Seleccionar bien</button>
+                        </div><br>
+                        <div class="row info" style="text-align: center;">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+                                <div class="name">Elija el plazo de pago:</div>
+                                <select id="plazo">
+                                    <option value="3">Mensual</option>
+                                    <option value="1">Diario</option>
+                                    <option value="2">Quincenal</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">             
+                                <div class="name">Agrupar los pagos:</div>
+                                <select id="agrupar">
+                                    <option value="0">No</option>
+                                    <option value="1">Si</option>
+                                </select>
+                            </div>
+                        </div><br>
+
+                        <div class="form-row">
+                            <div class="name2">Depositos:</div>
+                            <div class="col-6">
+                                <div class="value2">
+                                    <input type="number" id="deposito" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name2">Costo de renta:</div>
+                            <div class="value2">
+                                <div class="input-group">
+                                    <input type="number" id="costorenta" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="text-align: center;">
+                            <div class="p-2"><button class="btn btn-primary" id="registrar"><i class="fas fa-save"></i> Registrar</button></div>
+                            <div><a class="btn btn-dark" id="volver"><i class="fas fa-arrow-left"></i> Volver</a><a class="btn btn-dark" href="../../index.html"><i class="fas fa-home"></i> Menú</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modalbienes" class="modal">
+        <div class="modalbienes-content">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <span class="close">&times;</span>
+                    <h2 class="title">Bienes disponibles</h2>
+                </div>
+                <div style="display: block; margin: 10px;">
+                    <label>Buscar:</label>
+                    <input type="search" onkeyup="javascript:filtrartabla(filtnombre,tabbienes); " id="filtnombre">
+                    <a class="btn btn-primary" href="../../vistas/funciones/registrarbien.html"><i class="fas fa-plus"></i></a>
+                </div>
+                <div style="display: inline-block;">
+                    <label>Tipo:</label><select name="tipos" id="listatipobienes"></select> 
+                    <label>Grupo:</label><select name="grupos" id="listagrupos"></select>
+                </div>
+                
+                <div id="lbienes" style="margin: 10px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="../../js/herramientas/session.js"></script>
+<script defer src="../../js/config.js"></script>
+<script defer src="../../js/bienes/bienes.js"></script>
+<script defer src="../../js/modals/modalbienes.js"></script>
+<script defer src="../../js/finanzas/crearcontrato.js"></script>
+
+</html>

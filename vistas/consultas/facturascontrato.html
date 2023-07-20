@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/fontasome.css">
+    <script src="../../js/herramientas/buscar.js"></script>
+    <title>Facturas</title>
+
+</head>
+<body onload="listarfacturas();">
+<div class="card-5"  style="text-align: center;">
+    
+    <div class="card-heading">
+        <h1 class="title">Facturas del contrato</h1>
+    </div><br>
+    <div style="display: inline-block;">
+        <label>Buscar:</label>
+        <input type="search" onkeyup="javascript:filtrartabla(filtnombre,tabclientes); " id="filtnombre">
+    </div>
+    <div style="display: block; margin: 10px;">
+        <a class="btn btn-dark" id="back"><i class="fas fa-arrow-left"></i> Volver</a>
+        <a class="btn btn-dark" href="../../index.html"><i class="fas fa-home"></i> Menú</a>
+        <a class="btn btn-danger" id="adelanto"><i class="fas fa-money-bill-wave"></i> Adelanto</a>
+    </div>
+    <div id="listafacturas" class="lista"></div>
+
+</div>
+
+<div id="modalfactura" class="modalfactura">
+    <div class="modalfactura-content">
+        <div class="form">
+            <span class="close">&times;</span>
+            <div class="titulo" style="text-align: center;"><h1>Registrar pago</h1></div>
+            <div id="factura" style="margin: 10px;"></div>
+        </div>
+    </div>
+</div>
+
+<div id="modificarfactura" class="modalfactura">
+    <div class="modalfactura-content">
+        <div class="form">
+            <span class="close">&times;</span>
+            <div class="titulo2" style="text-align: center;"><h1>Modifcar factura</h1></div>
+            <div id="modfactura" style="margin: 10px;"></div>
+        </div>
+    </div>
+</div>
+
+<div id="abonarfactura" class="modalfactura">
+    <div class="modalfactura-content">
+        <div class="form">
+            <span class="close">&times;</span>
+            <div class="titulo3" style="text-align: center;"><h1>Abonar factura</h1></div>
+            <div id="abonofactura" style="margin: 10px;"></div>
+        </div>
+    </div>
+</div>
+
+<div id="ingresos" class="modalbienes">
+    <div class="modalbienes-content">
+        <div class="card card-5">
+            <div class="card-heading">
+                <span class="close">&times;</span>
+                <h2 class="title">Ingresos del cliente.</h2>
+            </div>
+            <div id="tablaingresos"></div>
+        </div>>
+    </div>
+</div>
+
+
+</body>
+    <script src="../../js/herramientas/session.js"></script>
+    <script src="../../js/config.js"></script>
+    <script defer src="../../js/finanzas/deudores.js"></script>
+    <script defer src="../../js/modals/modalpago.js"></script>
+    <script defer src="../../js/finanzas/pagos.js"></script>
+</html>
